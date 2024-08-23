@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Enjoy = () => {
@@ -31,18 +32,18 @@ const Enjoy = () => {
               type="text"
               className="flex-grow w-full h-12 px-4 mb-3  transition duration-200 border-2 border-transparent rounded appearance-none md:mr-2 md:mb-0 bg-deep-purple-900 focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
             />
-            <link
+            <Link
               href="/"
               className="inline-flex items-center justify-center w-full h-12 px-6 font-semibold tracking-wide transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none"
             >
               Subscribe
-            </link>
+            </Link>
           </form>
           <p className="max-w-md mb-10 text-xs tracking-wide  sm:text-sm sm:mx-auto md:mb-16">
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem
             accusantium doloremque.
           </p>
-          <link
+          <Link
             href="/"
             aria-label="Scroll down"
             className="flex items-center justify-center w-10 h-10 mx-auto text-white duration-300 transform border border-gray-400 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110"
@@ -56,7 +57,7 @@ const Enjoy = () => {
             >
               <path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z"></path>
             </svg>
-          </link>
+          </Link>
         </div>
       </div>
     </div>
