@@ -12,7 +12,7 @@ const Footer = () => {
                 Get In Touch <br />
                 With Us!
               </h2>
-              <a href="javascript." className="flex gap-3">
+              <link href="javascript." className="flex gap-3">
                 <svg
                   version="1.1"
                   id="Layer_1"
@@ -37,9 +37,9 @@ const Footer = () => {
                   Nayabazar ,West Sikkim <br />
                   pin- 737121
                 </p>
-              </a>
+              </link>
 
-              <a href="" className="flex  gap-3">
+              <link href="" className="flex  gap-3">
                 <svg
                   version="1.1"
                   id="Layer_1"
@@ -56,10 +56,10 @@ const Footer = () => {
                 <p className="flex  font-normal text-white max-[470px]:text-center">
                   +91 9434382418
                 </p>
-              </a>
+              </link>
 
               <div className="flex items-center max-[470px]:justify-center gap-5">
-                <a
+                <link
                   href="javascript:;"
                   className="p-2 text-white rounded transition-all duration-500 hover:bg-yellow-800 focus-within:bg-yellow-800 hover:text-white focus-within:outline-0 focus-within:text-white"
                 >
@@ -79,8 +79,8 @@ const Footer = () => {
                       d="M205,35.05A118.61,118.61,0,0,0,120.46,0C54.6,0,1,53.61,1,119.51a119.5,119.5,0,0,0,16,59.74L0,241.19l63.36-16.63a119.43,119.43,0,0,0,57.08,14.57h0A119.54,119.54,0,0,0,205,35.07v0ZM120.5,219A99.18,99.18,0,0,1,69.91,205.1l-3.64-2.17-37.6,9.85,10-36.65-2.35-3.76A99.37,99.37,0,0,1,190.79,49.27,99.43,99.43,0,0,1,120.49,219ZM175,144.54c-3-1.51-17.67-8.71-20.39-9.71s-4.72-1.51-6.75,1.51-7.72,9.71-9.46,11.72-3.49,2.27-6.45.76-12.63-4.66-24-14.84A91.1,91.1,0,0,1,91.25,113.3c-1.75-3-.19-4.61,1.33-6.07s3-3.48,4.47-5.23a19.65,19.65,0,0,0,3-5,5.51,5.51,0,0,0-.24-5.23C99,90.27,93,75.57,90.6,69.58s-4.89-5-6.73-5.14-3.73-.09-5.7-.09a11,11,0,0,0-8,3.73C67.48,71.05,59.75,78.3,59.75,93s10.69,28.88,12.19,30.9S93,156.07,123,169c7.12,3.06,12.68,4.9,17,6.32a41.18,41.18,0,0,0,18.8,1.17c5.74-.84,17.66-7.21,20.17-14.18s2.5-13,1.75-14.19-2.69-2.06-5.7-3.59l0,0Z"
                     />
                   </svg>
-                </a>
-                <a
+                </link>
+                <link
                   href="javascript:;"
                   className="p-2 h-10 w-10 flex items-center justify-center text-white rounded transition-all duration-500 hover:bg-yellow-800 focus-within:outline-0 focus-within:bg-yellow-800 hover:text-white focus-within:text-white"
                 >
@@ -128,8 +128,8 @@ const Footer = () => {
                       </radialGradient>
                     </defs>
                   </svg>
-                </a>
-                <a
+                </link>
+                <link
                   href="javascript:;"
                   className="p-2 text-white rounded transition-all duration-500 hover:bg-yellow-800 focus-within:bg-yellow-800 hover:text-white focus-within:outline-0 focus-within:text-white"
                 >
@@ -142,7 +142,7 @@ const Footer = () => {
                   >
                     <path d="M15.4977 12.8803L15.9326 10.1198H13.2539V8.32546C13.2539 7.57064 13.6278 6.83307 14.8237 6.83307H16.0587V4.48234C15.3395 4.36776 14.6128 4.30577 13.8844 4.29688C11.6797 4.29687 10.2403 5.62104 10.2403 8.0149V10.1198H7.79639V12.8803H10.2403V19.5572H13.2539V12.8803H15.4977Z" />
                   </svg>
-                </a>
+                </link>
               </div>
             </div>
             <div className="flex  flex-col min-[470px]:flex-row min-[470px]:items-center gap-3 pt-0">
@@ -207,120 +207,81 @@ const Footer = () => {
               </h6>
               <ul className="flex flex-col justify-center items-center max-[470px]:items-center max-[470px]:justify-center gap-6">
                 <li>
-                  <a
+                  <link
                     href="javascript:;"
                     className=" font-normal max-lg:text-center  whitespace-nowrap transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
                   >
                     Home
-                  </a>
+                  </link>
                 </li>
                 <li>
-                  <a
+                  <link
                     href="javascript:;"
                     className="text-white font-normal max-lg:text-center whitespace-nowrap transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
                   >
                     About
-                  </a>
+                  </link>
                 </li>
                 <li>
-                  <a
+                  <link
                     href="javascript:;"
                     className="text-white font-normal max-lg:text-center  whitespace-nowrap transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
                   >
                     Products
-                  </a>
+                  </link>
                 </li>
                 <li>
-                  <a
+                  <link
                     href="javascript:;"
                     className="text-white font-normal max-lg:text-center  whitespace-nowrap transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
                   >
                     categories
-                  </a>
+                  </link>
                 </li>
                 <li>
-                  <a
+                  <link
                     href="javascript:;"
                     className="text-white font-normal max-lg:text-center  whitespace-nowrap transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
                   >
                     faq
-                  </a>
+                  </link>
                 </li>
               </ul>
               {/* Google Map */}
             </div>
             
-            {/* <div className="">
-              <h6 className="text-lg font-medium  mb-7 max-[470px]:text-center">
-                Products
-              </h6>
-              <ul className="flex flex-col max-[470px]:items-center max-[470px]:justify-center gap-6">
-                <li>
-                  <a
-                    href="javascript:;"
-                    className="text-white font-normal max-lg:text-center  whitespace-nowrap transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
-                  >
-                    Figma UI System
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:;"
-                    className="text-white font-normal max-lg:text-center  whitespace-nowrap transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
-                  >
-                    Icons Assets
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:;"
-                    className="text-white font-normal max-lg:text-center  whitespace-nowrap transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
-                  >
-                    Responsive Blocks
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="javascript:;"
-                    className="text-white font-normal max-lg:text-center  whitespace-nowrap transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
-                  >
-                    Components Library
-                  </a>
-                </li>
-              </ul>
-            </div> */}
           </div>
         </div>
 
         <div className="flex flex-col-reverse gap-5 sm:flex-row items-center first-letter:items-center justify-between pt-7">
           <p className="font-normal text-sm text-gray-500">
-            © <a href="https://pagedone.io/">sugandh food Products </a>2024, All
+            © <link href="https://pagedone.io/">sugandh food Products </link>2024, All
             rights reserved.
           </p>
           <ul className="flex items-center gap-9">
             <li>
-              <a
+              <link
                 href="javascript:;"
                 className="text-gray-500 text-sm font-normal transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
               >
                 Terms
-              </a>
+              </link>
             </li>
             <li>
-              <a
+              <link
                 href="javascript:;"
                 className="text-gray-500 text-sm font-normal transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
               >
                 Privacy
-              </a>
+              </link>
             </li>
             <li>
-              <a
+              <link
                 href="javascript:;"
                 className="text-gray-500 text-sm font-normal transition-all duration-300 hover:text-yellow-800 focus-within:outline-0 focus-within:text-yellow-800"
               >
                 Cookies
-              </a>
+              </link>
             </li>
           </ul>
         </div>
