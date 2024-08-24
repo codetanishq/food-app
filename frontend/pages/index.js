@@ -5,8 +5,23 @@ import ProductCard from "@/components/ProductCard";
 import Welcome from "@/components/Welcome";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Wrapper from "@/components/Wrapper";
+import { feetchDataFromApi } from "@/utils/api";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
+  const [data,setData] = useState(null);
+
+  useEffect(()=>{
+    fetchProducts();
+  },[]);
+
+  const fetchProducts = async () =>{
+    const {data} =await feetchDataFromApi("/api/products");
+    setData(data);
+  };
+
+
   return (
     <main className="bg-white">
       <HeroBanner />
