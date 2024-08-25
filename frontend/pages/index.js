@@ -1,3 +1,5 @@
+// pages/index.js
+
 import Counter from "@/components/Counter";
 import Enjoy from "@/components/Enjoy";
 import HeroBanner from "@/components/HeroBanner";
@@ -5,32 +7,16 @@ import ProductCard from "@/components/ProductCard";
 import Welcome from "@/components/Welcome";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Wrapper from "@/components/Wrapper";
-import { feetchDataFromApi } from "@/utils/api";
-import { useEffect, useState } from "react";
+import { fetchDataFromApi } from "@/utils/api";
 
-export default function Home() {
-
-  const [data,setData] = useState(null);
-
-  useEffect(()=>{
-    fetchProducts();
-  },[]);
-
-  const fetchProducts = async () =>{
-    const {data} =await feetchDataFromApi("/api/products");
-    setData(data);
-  };
-
-
+export default function Home({ products }) {
   return (
     <main className="bg-white">
       <HeroBanner />
       <Wrapper>
         <Enjoy />
-
         <Welcome />
-        {/* PEODUCT GRID START */}
-
+        {/* PRODUCT GRID START */}
         <Counter />
         <div className="flex justify-center items-center text-custom-text font-bold md:text-7xl text-4xl py-8">
           Best Selling!!
@@ -40,17 +26,62 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+        {products?.data?.map((product) => (
+            <ProductCard key={product.id} data={product} />
+          )) || <p>No products available</p>}
         </div>
-        {/* PEODUCT GRID END */}
+        {/* PRODUCT GRID END */}
         <WhyChooseUs />
       </Wrapper>
     </main>
   );
 }
+
+export async function getStaticProps() {
+  try {
+      const products = await fetchDataFromApi("/api/products?populate=*");
+
+      // Log the products to check the image URLs
+      console.log("Fetched products:", products);
+
+      if (!products || !products.data) {
+          return {
+              props: {
+                  products: { data: [] },
+              },
+              revalidate: 10,
+          };
+      }
+
+      // Sanitize products data
+      const sanitizedProducts = {
+          ...products,
+          data: products.data.map((product) => ({
+              ...product,
+              attributes: {
+                  ...product.attributes,
+                  name: product.attributes.name ?? "Unnamed Product",
+                  price: product.attributes.price ?? 0,
+                  description: product.attributes.description ?? "",
+                  thumbnail: product.attributes.thumbnail ?? {},
+              },
+          })),
+      };
+
+      return {
+          props: {
+              products: sanitizedProducts,
+          },
+          revalidate: 10,
+      };
+  } catch (error) {
+      console.error("Error fetching products:", error);
+      return {
+          props: {
+              products: { data: [] },
+          },
+          revalidate: 10,
+      };
+  }
+}
+
