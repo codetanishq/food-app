@@ -42,7 +42,7 @@ export async function getStaticProps() {
       const products = await fetchDataFromApi("/api/products?populate=*");
 
       // Log the products to check the image URLs
-      console.log("Fetched products:", products);
+     
 
       if (!products || !products.data) {
           return {

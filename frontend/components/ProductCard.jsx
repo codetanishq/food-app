@@ -2,6 +2,7 @@ import React from "react";
 import "animate.css";
 import Link from "next/link";
 import Image from "next/image";
+import { getDiscountedPrice } from "@/utils/helper";
 
 
 
@@ -10,7 +11,7 @@ const ProductCard = ({ data: { attributes: p = {}, id } = {} }) => {
 
 
   const imageUrl =p.thumbnail?.data?.attributes?.url || "/default-image.jpg";
-  console.log("Image URL:", imageUrl); 
+
   return (
     <Link
       href={`/products/${p.slug}`} 
@@ -31,7 +32,9 @@ const ProductCard = ({ data: { attributes: p = {}, id } = {} }) => {
           {p.original_price && (
             <>
               <p className="font-medium text-base line-through">{p.original_price}</p>
-              <p className="ml-auto font-medium text-base text-green-500">20% off</p>
+              <p className="ml-auto font-medium text-base text-green-500">
+                {getDiscountedPrice(p.original_price,p.price)}% off
+              </p>
             </>
           )}
         </div>

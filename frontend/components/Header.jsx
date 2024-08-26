@@ -9,12 +9,14 @@ import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import MenuMobile from "./MenuMobile";
 import Image from "next/image";
+import { fetchDataFromApi } from "@/utils/api";
 
 const Header = () => {
   const [show, setShow] = useState("translate-y-0");
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showCatMenu, setshowCatMenu] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [categories, setCategories] = useState(null);
 
   const controlNavbar = () => {
     if (window.scrollY > 200) {
@@ -36,6 +38,15 @@ const Header = () => {
     };
   }, [lastScrollY]);
 
+  useEffect (()=>{
+    fetchcategories();
+
+  },[]);
+  const fetchcategories =async () =>{
+    const {data} = await fetchDataFromApi('/api/categories?populate=*')
+    setCategories(data)
+  };
+
   return (
     <header
       className={`w-full  h-[50px] md:h-[80px] flex bg-white items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}
@@ -44,13 +55,15 @@ const Header = () => {
         <Link href="/">
           <img src="/logo.webp" alt="Logo" className="w-[60px] md:w-[80px]" />
         </Link>
-        <Menu showCatMenu={showCatMenu} setshowCatMenu={setshowCatMenu} />
+            
+            <Menu showCatMenu={showCatMenu} setshowCatMenu={setshowCatMenu} categories={categories}  />
 
         {mobileMenu && (
           <MenuMobile
             showCatMenu={showCatMenu}
             setshowCatMenu={setshowCatMenu}
             setMobileMenu={setMobileMenu}
+            categories={categories}
           />
         )}
 
