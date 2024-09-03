@@ -10,6 +10,7 @@ import { VscChromeClose } from "react-icons/vsc";
 import MenuMobile from "./MenuMobile";
 import Image from "next/image";
 import { fetchDataFromApi } from "@/utils/api";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [show, setShow] = useState("translate-y-0");
@@ -17,6 +18,9 @@ const Header = () => {
   const [showCatMenu, setshowCatMenu] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [categories, setCategories] = useState(null);
+
+  const cart = useSelector((state) => state.cart || {});
+  const cartItems = cart.cartItems || [];
 
   const controlNavbar = () => {
     if (window.scrollY > 200) {
@@ -38,13 +42,12 @@ const Header = () => {
     };
   }, [lastScrollY]);
 
-  useEffect (()=>{
+  useEffect(() => {
     fetchcategories();
-
-  },[]);
-  const fetchcategories =async () =>{
-    const {data} = await fetchDataFromApi('/api/categories?populate=*')
-    setCategories(data)
+  }, []);
+  const fetchcategories = async () => {
+    const { data } = await fetchDataFromApi("/api/categories?populate=*");
+    setCategories(data);
   };
 
   return (
@@ -55,8 +58,12 @@ const Header = () => {
         <Link href="/">
           <img src="/logo.webp" alt="Logo" className="w-[60px] md:w-[80px]" />
         </Link>
-            
-            <Menu showCatMenu={showCatMenu} setshowCatMenu={setshowCatMenu} categories={categories}  />
+
+        <Menu
+          showCatMenu={showCatMenu}
+          setshowCatMenu={setshowCatMenu}
+          categories={categories}
+        />
 
         {mobileMenu && (
           <MenuMobile
@@ -84,12 +91,11 @@ const Header = () => {
           <Link href="/cart">
             <div className="w-8 md:w-12 h-8 md:h-12 flex justify-center items-center rounded-full hover:bg-black/[0.05] cursor-pointer relative">
               <BsCart className="text-[15px] md:text-[20px]" />
-              <div
-                className="h-[14px] min-w-[14px] md:h-[18px] md:min-h-[18px] bg-red-600 rounded-full absolute top-1 left-5 md:left-7 
-                 text-white text-[8px] md:text-[10px] flex juatify-center items-center px-[1px] md:px-[5px] "
-              >
-                5
-              </div>
+              {cartItems.length > 0 && (
+                <div className="h-[14px] md:h-[18px] min-w-[14px] md:min-w-[18px] rounded-full bg-red-600 absolute top-1 left-5 md:left-7 text-white text-[10px] md:text-[12px] flex justify-center items-center px-[2px] md:px-[5px]">
+                  {cartItems.length}
+                </div>
+              )}
             </div>
           </Link>
           {/* Icons end */}

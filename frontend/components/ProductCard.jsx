@@ -14,7 +14,7 @@ const ProductCard = ({ data: { attributes: p = {}, id } = {} }) => {
 
   return (
     <Link
-      href={`/products/${p.slug}`} 
+      href={`/product/${p.slug}`} 
       className="bg-slate-50 rounded-2xl border transform overflow-hidden duration-200 hover:scale-105 cursor-pointer shadow-lg gap-4"
     >
       <Image
